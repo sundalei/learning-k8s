@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-deployments
+  namespace: shield
+subjects:
+  - kind: User
+    name: sky
+    apiGroup: rbac.authorization.k8s.io # for user, the apiGroup is always rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: read-deployments
+  apiGroup: rbac.authorization.k8s.io
